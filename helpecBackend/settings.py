@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'cb88962f02b644a194c6fef83146ced3.vfs.cloud9.us-east-1.amazonaws.com',
-    'ec2-34-200-238-137.compute-1.amazonaws.com'
+    'ec2-34-200-238-137.compute-1.amazonaws.com',
+    'helpec.herokuapp.com'
 ]
 
 
