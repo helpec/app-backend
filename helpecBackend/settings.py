@@ -26,7 +26,8 @@ SECRET_KEY = '@luq$r%tfc@kr&8#tre1i=@j$fb((7n0a#^&a-!999&0pp0q1d'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'ec2-35-174-62-178.compute-1.amazonaws.com'    
+    'cb88962f02b644a194c6fef83146ced3.vfs.cloud9.us-east-1.amazonaws.com',
+    'ec2-34-200-238-137.compute-1.amazonaws.com'
 ]
 
 
@@ -48,7 +49,7 @@ INSTALLED_APPS = [
     'rest_auth.registration',
     'corsheaders',
     'helpecBackend.core',
-    # 'helpecBackend.account',
+    'helpecBackend.hp_account',
 ]
 
 SITE_ID = 1    
@@ -84,7 +85,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'helpecBackend.wsgi.application'
 
-# AUTH_USER_MODEL = 'account.HP_User'
+AUTH_USER_MODEL = 'hp_account.HP_User'
+
+REST_AUTH_SERIALIZERS = {
+    "USER_DETAILS_SERIALIZER" : 'helpecBackend.hp_account.serializers.HP_UserDetailsSerializer'
+}
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
@@ -139,7 +144,6 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ORIGIN_WHITELIST = (
     'b4d04372bf3a44af9a1546545a34950d.vfs.cloud9.us-east-1.amazonaws.com',
-    'ec2-35-174-62-178.compute-1.amazonaws.com'
 )
 
 REST_FRAMEWORK = {
