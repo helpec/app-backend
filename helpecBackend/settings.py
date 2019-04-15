@@ -26,9 +26,9 @@ SECRET_KEY = '@luq$r%tfc@kr&8#tre1i=@j$fb((7n0a#^&a-!999&0pp0q1d'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'cb88962f02b644a194c6fef83146ced3.vfs.cloud9.us-east-1.amazonaws.com',
-    'ec2-34-200-238-137.compute-1.amazonaws.com',
-    'helpec.herokuapp.com'
+    '15f7cafcb1cf48d58df89d0055329efe.vfs.cloud9.us-east-1.amazonaws.com',
+    'ec2-34-201-14-88.compute-1.amazonaws.com',
+    'api.helpec.com.br'
 ]
 
 
@@ -156,8 +156,3 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ),
 }
-
-import django_heroku
-
-# Activate Django-Heroku.
-django_heroku.settings(locals())
