@@ -18,7 +18,7 @@ from django.urls import path, include
 from helpecBackend.core.views import HomePage
 
 urlpatterns = [
-    path('', HomePage.as_view(), name='home'),
-    path('admin/', admin.site.urls),
-    path('api/', include('helpecBackend.core.urls')),
+    path("", HomePage.as_view(), name="home"),
+    path("admin/", admin.site.urls),
+    path("api/", include("helpecBackend.core.urls")),
 ]

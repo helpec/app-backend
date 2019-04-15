@@ -7,9 +7,11 @@ from .models import HP_User, Contact, Occurrence
 class HP_UserAdmin(admin.ModelAdmin):
     pass
 
+
 @admin.register(Contact)
 class Contact(admin.ModelAdmin):
     pass
+
 
 @admin.register(Occurrence)
 class Occurrence(admin.ModelAdmin):

@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class HP_AccountConfig(AppConfig):
-    name = 'hp_account'
+    name = "hp_account"

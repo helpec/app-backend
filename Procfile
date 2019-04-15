@@ -1,1 +1,0 @@
-web: gunicorn helpecBackend.wsgi:application
