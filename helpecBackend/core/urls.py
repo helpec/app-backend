@@ -1,11 +1,16 @@
 from django.urls import path, include
-from rest_framework.authtoken import views as rest_framework_views
+from rest_framework import routers
 
-from .views import HomePage
+from helpecBackend.core import views
+
+router = routers.DefaultRouter()
+router.register(r"contact", views.ContactViewSet)
+router.register(r"occurrence", views.OccurrenceViewSet)
+
 
 urlpatterns = [
-    path("", HomePage.as_view(), name="home-view"),
+    path("", views.HomePage.as_view(), name="home-view"),
     path("rest-auth/", include("rest_auth.urls")),
     path("rest-auth/registration/", include("rest_auth.registration.urls")),
-    path("accounts/", include("helpecBackend.hp_account.urls")),
+    path("accounts/", include(router.urls)),
 ]

@@ -31,6 +31,8 @@ ALLOWED_HOSTS = [
     "api.helpec.com.br",
 ]
 
+ADMINS = [("Cesar Augusto", "cesarabruschetta@gmail.com")]
+
 
 # Application definition
 
@@ -50,7 +52,6 @@ INSTALLED_APPS = [
     "rest_auth.registration",
     "corsheaders",
     "helpecBackend.core",
-    "helpecBackend.hp_account",
 ]
 
 SITE_ID = 1
@@ -86,10 +87,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "helpecBackend.wsgi.application"
 
-AUTH_USER_MODEL = "hp_account.HP_User"
+AUTH_USER_MODEL = "core.HP_User"
 
 REST_AUTH_SERIALIZERS = {
-    "USER_DETAILS_SERIALIZER": "helpecBackend.hp_account.serializers.HP_UserDetailsSerializer"
+    "USER_DETAILS_SERIALIZER": "helpecBackend.core.serializers.HP_UserDetailsSerializer"
 }
 
 # Database
@@ -107,12 +108,7 @@ DATABASES = {
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"
-    },
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
+    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"}
 ]
 
 
@@ -138,9 +134,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ORIGIN_WHITELIST = (
-    "b4d04372bf3a44af9a1546545a34950d.vfs.cloud9.us-east-1.amazonaws.com",
-)
+CORS_ORIGIN_WHITELIST = ("www.helpec.com.br",)
 
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
@@ -148,3 +142,10 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.TokenAuthentication",
     ),
 }
+
+
+EMAIL_HOST = "email-smtp.us-east-1.amazonaws.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+EMAIL_USE_TLS = True
