@@ -26,8 +26,7 @@ SECRET_KEY = "@luq$r%tfc@kr&8#tre1i=@j$fb((7n0a#^&a-!999&0pp0q1d"
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "15f7cafcb1cf48d58df89d0055329efe.vfs.cloud9.us-east-1.amazonaws.com",
-    "ec2-34-201-14-88.compute-1.amazonaws.com",
+    "ec2-35-173-200-137.compute-1.amazonaws.com",
     "api.helpec.com.br",
 ]
 
@@ -97,9 +96,13 @@ REST_AUTH_SERIALIZERS = {
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'helpec',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 
@@ -143,7 +146,7 @@ REST_FRAMEWORK = {
     ),
 }
 
-
+DEFAULT_FROM_EMAIL = 'no-reply@helpec.com.br'
 EMAIL_HOST = "email-smtp.us-east-1.amazonaws.com"
 EMAIL_PORT = 587
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")

@@ -12,5 +12,5 @@ urlpatterns = [
     path("", views.HomePage.as_view(), name="home-view"),
     path("rest-auth/", include("rest_auth.urls")),
     path("rest-auth/registration/", include("rest_auth.registration.urls")),
-    path("accounts/", include(router.urls)),
+    path("user/", include(router.urls)),
 ]

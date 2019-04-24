@@ -21,4 +21,5 @@ urlpatterns = [
     path("", HomePage.as_view(), name="home"),
     path("admin/", admin.site.urls),
     path("api/", include("helpecBackend.core.urls")),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
