@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-
+from rest_auth.serializers import PasswordResetSerializer
 from rest_framework import serializers
 
 from .models import Contact, Occurrence
@@ -8,6 +8,17 @@ from .models import Contact, Occurrence
 UserModel = get_user_model()
 
 
+class HP_PasswordResetSerializer(PasswordResetSerializer):
+    
+    def get_email_options(self):
+        """ this method to change default e-mail options"""
+
+        return {
+            "subject_template_name":'core/password_reset_subject.txt',
+            "email_template_name":'core/password_reset_email.html',
+        }
+
+    
 class HP_UserDetailsSerializer(serializers.ModelSerializer):
     """
     User model w/o password

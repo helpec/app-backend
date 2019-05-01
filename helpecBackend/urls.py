@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import TemplateView
+
 from helpecBackend.core.views import HomePage
 
 urlpatterns = [
@@ -22,5 +24,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include("helpecBackend.core.urls")),
    
-    path('accounts/', include('django.contrib.auth.urls')),
+    # this url is used to generate email content
+    path('password-reset/confirm/<uidb64>/<token>/',
+        TemplateView.as_view(template_name="core/password_reset_confirm.html"),
+        name='password_reset_confirm'),
 ]

@@ -26,7 +26,7 @@ SECRET_KEY = "@luq$r%tfc@kr&8#tre1i=@j$fb((7n0a#^&a-!999&0pp0q1d"
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "ec2-35-173-200-137.compute-1.amazonaws.com",
+    "*",
     "api.helpec.com.br",
 ]
 
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sites",
+    "helpecBackend.core",
     "rest_framework",
     "rest_framework.authtoken",
     "allauth",
@@ -50,8 +51,7 @@ INSTALLED_APPS = [
     "rest_auth",
     "rest_auth.registration",
     "corsheaders",
-    "helpecBackend.core",
-    "rest_framework_swagger"
+    "rest_framework_swagger",
 ]
 
 AUTHENTICATION_BACKENDS = (
@@ -97,7 +97,9 @@ WSGI_APPLICATION = "helpecBackend.wsgi.application"
 AUTH_USER_MODEL = "core.HP_User"
 
 REST_AUTH_SERIALIZERS = {
-    "USER_DETAILS_SERIALIZER": "helpecBackend.core.serializers.HP_UserDetailsSerializer"
+    "USER_DETAILS_SERIALIZER": "helpecBackend.core.serializers.HP_UserDetailsSerializer",
+    'PASSWORD_RESET_SERIALIZER': 'helpecBackend.core.serializers.HP_PasswordResetSerializer',
+    # "REST_AUTH_REGISTER_SERIALIZERS": 'helpecBackend.core.serializers.HP_PasswordResetSerializer',
 }
 
 # Database
