@@ -1,0 +1,18 @@
+site_name: Helpec API - API Helpec - Help Epilepsia e Convulsão
+site_url: https://api.helpec.com.br/
+repo_url: https://github.com/helpec/app-backend
+repo_name: 'GitHub'
+theme: readthedocs
+
+nav:
+- Home: 'index.md'
+- Install: 'setup.md'
+- API: 'api.md' 
+- Tests: 'tests.md'
+- Docs: 'docs.md'
+- About: 'about.md'
+
+use_directory_urls: false
+site_dir: doc_site
+remote_branch: master
+remote_name: github_io

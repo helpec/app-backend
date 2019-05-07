@@ -1,0 +1,13 @@
+language: python
+matrix:
+  include:
+    - python: 3.6.8
+      dist: xenial
+      sudo: true
+before_install:
+    - pip install --upgrade setuptools pip
+    - pip install -r requirements.txt
+script:
+  - coverage run --source='.' manage.py test -v2
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

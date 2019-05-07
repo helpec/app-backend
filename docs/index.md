@@ -1,0 +1,9 @@
+# API Helpec
+
+Codigo fonte da aplicação [GitHub](https://github.com/helpec/app-backend).
+
+## Acesso
+
+Link para a [API da aplicação](https://api.helpec.com.br/)
+
+## Proposito
