@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>API - Helpec API - API Helpec - Help Epilepsia e Convulsão</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "API";
+    var mkdocs_page_input_path = "api.md";
+    var mkdocs_page_url = "/api.html";
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home"> Helpec API - API Helpec - Help Epilepsia e Convulsão</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="index.html">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="setup.html">Install</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="api.html">API</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#api-para-reservar-sala-de-reuniao">API para reservar sala de reunião</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#end-points-para-gestao-das-salas">End Points Para Gestão das Salas</a></li>
+        
+            <li><a class="toctree-l3" href="#end-points-para-gestao-de-reservas">End Points Para Gestão de Reservas</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="tests.html">Tests</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="docs.html">Docs</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="about.html">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Helpec API - API Helpec - Help Epilepsia e Convulsão</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>API</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/helpec/app-backend/edit/master/docs/api.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="api-para-reservar-sala-de-reuniao">API para reservar sala de reunião</h1>
+<h2 id="end-points-para-gestao-das-salas">End Points Para Gestão das Salas</h2>
+<ul>
+<li><code>GET    /api/meeting-room/</code> - Lista as salas criadas no sistema</li>
+<li><code>GET    /api/meeting-room/?search=termo</code> - Listar as salas criadas, filtrando pelo "termo"</li>
+<li><code>POST   /api/meeting-room/</code> - Registrar uma nova sala de reunião</li>
+<li><code>PATCH  /api/meeting-room/:id/</code> - Editar uma sala de reunião existente</li>
+<li><code>DELETE /api/meeting-room/:id/</code> - Remover uma sala de reunião existente</li>
+</ul>
+<h3 id="exemplos-de-requisicao-de-criacao-de-sala">Exemplos de requisição de criação de sala</h3>
+<pre><code class="json">{
+&quot;name&quot;: &quot;Sala Principal&quot;,
+&quot;place&quot;: &quot;5 andar&quot;,
+&quot;description&quot;: &quot;Curabitur pellentesque faucibus arcu a varius.&quot;
+}
+</code></pre>
+
+<h2 id="end-points-para-gestao-de-reservas">End Points Para Gestão de Reservas</h2>
+<ul>
+<li><code>GET    /api/meeting/</code> - Lista as reservas criadas no sistema</li>
+<li><code>GET    /api/meeting/?search=termo</code> - Listar as reservas criadas, filtrando pelo "termo"</li>
+<li><code>POST   /api/meeting/</code> - Registrar uma nova reserva</li>
+<li><code>PATCH  /api/meeting/:id/</code> - Editar uma reserva existente</li>
+<li><code>DELETE /api/meeting/:id/</code> - Remover uma reserva existente</li>
+</ul>
+<h3 id="exemplos-de-requisicao-para-criacao-de-uma-reserva-de-sala">Exemplos de requisição para criação de uma reserva de sala</h3>
+<pre><code class="json">{
+&quot;name&quot;: &quot;Teste&quot;
+&quot;start&quot;: 2018-01-01 09:00:00
+&quot;end&quot;: 2018-01-01 10:00:00
+&quot;meeting_room&quot;: &lt;id-meeting-room&gt;
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tests.html" class="btn btn-neutral float-right" title="Tests">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="setup.html" class="btn btn-neutral" title="Install"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/helpec/app-backend/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="setup.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="tests.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+
+</body>
+</html>
