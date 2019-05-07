@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+     <loc>https://api.helpec.com.br/index.html</loc>
+     <lastmod>2019-05-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://api.helpec.com.br/setup.html</loc>
+     <lastmod>2019-05-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://api.helpec.com.br/api.html</loc>
+     <lastmod>2019-05-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://api.helpec.com.br/tests.html</loc>
+     <lastmod>2019-05-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://api.helpec.com.br/docs.html</loc>
+     <lastmod>2019-05-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://api.helpec.com.br/about.html</loc>
+     <lastmod>2019-05-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+</urlset>
