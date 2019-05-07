@@ -81,6 +81,8 @@
         
             <li><a class="toctree-l3" href="#executar-build-da-documentacao">Executar build da documentação</a></li>
         
+            <li><a class="toctree-l3" href="#deploy-documentacao">Deploy documentação</a></li>
+        
         </ul>
     
 
@@ -136,6 +138,21 @@ $ ../bin/pip install mkdocs
 <h2 id="executar-build-da-documentacao">Executar <code>build</code> da documentação</h2>
 <pre><code class="bash">$ cd /path/to/env/app_backend/app
 $ ../bin/mkdocs build
+</code></pre>
+
+<h2 id="deploy-documentacao">Deploy documentação</h2>
+<ul>
+<li>Aticionar git-remote remote  </li>
+</ul>
+<pre><code class="bash">$ cd /path/to/env/app_backend/app
+$ git remote add github_io git@github.com:helpec/helpec.github.io.git
+</code></pre>
+
+<ul>
+<li>Enviar arquivos <code>buildados</code></li>
+</ul>
+<pre><code class="bash">$ cd /path/to/env/app_backend/app
+$ ../bin/mkdocs gh-deploy
 </code></pre>
               
             </div>

@@ -62,6 +62,8 @@
     
         <ul>
         
+            <li><a class="toctree-l3" href="#docker-mysql-dev">Docker MYSQL DEV</a></li>
+        
             <li><a class="toctree-l3" href="#criar-o-virtualenv">Criar o virtualenv</a></li>
         
             <li><a class="toctree-l3" href="#clonar-o-codigo-fonte-da-aplicacao">Clonar o código fonte da aplicação</a></li>
@@ -136,6 +138,10 @@
             <div class="section">
               
                 <h1 id="instalar-o-ambiente-local">Instalar o Ambiente Local</h1>
+<h2 id="docker-mysql-dev">Docker MYSQL DEV</h2>
+<pre><code class="bash">docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql:8
+</code></pre>
+
 <h2 id="criar-o-virtualenv">Criar o virtualenv</h2>
 <pre><code class="bash">$ virtualenv -p /usr/bin/python3.6 app_backend
 </code></pre>
