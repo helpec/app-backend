@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: "/sbin/my_init -- bash -l"
+    ports:
+      - "8000:8000"
+      - "80:80"
+    tty: true
