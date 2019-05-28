@@ -14,5 +14,3 @@ nav:
 
 use_directory_urls: false
 site_dir: doc_site
-remote_branch: master
-remote_name: github_io

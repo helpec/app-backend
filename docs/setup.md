@@ -35,6 +35,12 @@ $ ../bin/python ./manage.py migrate
 $ ../bin/python ./manage.py createsuperuser
 ```
 
+## Coletar arquivos estaticos da aplicação
+
+```bash
+$ ../bin/python ./manage.py collectstatic
+````
+
 ## Executar o servidor de desenvolvimento
 
 ```bash
