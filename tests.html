@@ -164,7 +164,10 @@ $ ../bin/flake8 app_backend/*
 <ul>
 <li>Formatar o codigo pelo padrão do pep8 (black)</li>
 </ul>
-<p><code>$ ./bin/black ../bin/black --exclude='/migrations/' app_backend/</code></p>
+<pre><code class="bash">$ cd /path/to/env/app_backend/app
+$ ../bin/black --exclude='/migrations/' app_backend/
+</code></pre>
+
 <h2 id="executar-o-coverage-report">Executar o Coverage report</h2>
 <p>Após executar todos os testes unitários execute o comando abaixo</p>
 <pre><code class="bash">$ cd /path/to/env/app_backend/app
