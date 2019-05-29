@@ -5,7 +5,7 @@
 ## AutenticationUser - Login
 
 ```
-POST {{apiUrl}}/api/rest-auth/login/
+POST https://api.helpec.com.br/api/rest-auth/login/
 ```
 
 EndPoint necessario para login do usuario na aplicação
@@ -42,7 +42,7 @@ EndPoint necessario para login do usuario na aplicação
 ## AutenticationUser - RegistrationUser
 
 ```
-POST {{apiUrl}}/api/rest-auth/registration/
+POST https://api.helpec.com.br/api/rest-auth/registration/
 ```
 
 EndPoind utilizado para fazer o registro num novo usuario no sistema
@@ -83,7 +83,7 @@ EndPoind utilizado para fazer o registro num novo usuario no sistema
 ## AutenticationUser - RegistrationUser - VerifyEmail
 
 ```
-POST {{apiUrl}}/api/rest-auth/registration/verify-email/
+POST https://api.helpec.com.br/api/rest-auth/registration/verify-email/
 ```
 
 EndPoint utilizado para fazer o processo de verificação de email do usuario registrado no sistema, essa etapa é utilizada logo apos a etapa de registro do usuario
@@ -118,7 +118,7 @@ EndPoint utilizado para fazer o processo de verificação de email do usuario re
 ## AutenticationUser - ResetPassword
 
 ```
-POST {{apiUrl}}/api/rest-auth/password/reset/
+POST https://api.helpec.com.br/api/rest-auth/password/reset/
 ```
 
 EndPont utilizado para o inicio do processo de recuperação de senha do usuario, esse processo envia um email com um token para usuario
@@ -155,7 +155,7 @@ EndPont utilizado para o inicio do processo de recuperação de senha do usuario
 ## AutenticationUser - ResetPassword - Confirm
 
 ```
-POST {{apiUrl}}/api/rest-auth/password/reset/confirm/
+POST https://api.helpec.com.br/api/rest-auth/password/reset/confirm/
 ```
 
 EndPont para recuperar a senha do usuario, esse endpont utiliza o token enviado ao usuario para no porcesso de `resetPassword`
@@ -196,7 +196,7 @@ EndPont para recuperar a senha do usuario, esse endpont utiliza o token enviado 
 ## AutenticationUser - UserDetais
 
 ```
-GET {{apiUrl}}/api/rest-auth/user/
+GET https://api.helpec.com.br/api/rest-auth/user/
 ```
 
 EndPont que recupera os dados do do usuario logado no sistema
@@ -227,7 +227,7 @@ EndPont que recupera os dados do do usuario logado no sistema
 ## AutenticationUser - UserDetais - Update
 
 ```
-PATCH {{apiUrl}}/api/rest-auth/user/
+PATCH https://api.helpec.com.br/api/rest-auth/user/
 ```
 
 EndPont utilizado para atualizar os dados do usuario logado
@@ -266,7 +266,7 @@ EndPont utilizado para atualizar os dados do usuario logado
 ## AutenticationUser - UserDetais - Override
 
 ```
-PUT {{apiUrl}}/api/rest-auth/user/
+PUT https://api.helpec.com.br/api/rest-auth/user/
 ```
 
 Sobrescreve o usuario logado os dados enviados ou com seu valor padrão
@@ -309,7 +309,7 @@ Sobrescreve o usuario logado os dados enviados ou com seu valor padrão
 ## ContactUser - List Constacts
 
 ```
-GET {{apiUrl}}/api/accounts/contact
+GET https://api.helpec.com.br/api/accounts/contact
 ```
 
 EndPont utilizado listar os contatos do usuario logado
@@ -340,7 +340,7 @@ EndPont utilizado listar os contatos do usuario logado
 ## ContactUser - Create Contact
 
 ```
-POST {{apiUrl}}/api/accounts/contact/
+POST https://api.helpec.com.br/api/accounts/contact/
 ```
 
 EndPont utilizado criar um novo contatos para o usuario logado
@@ -379,7 +379,7 @@ EndPont utilizado criar um novo contatos para o usuario logado
 ## OccurrenceUser - List Occurrence
 
 ```
-GET {{apiUrl}}/api/accounts/occurrence
+GET https://api.helpec.com.br/api/accounts/occurrence
 ```
 
 EndPont utilizado listar as ocorrencias do usuario logado
@@ -411,7 +411,7 @@ EndPont utilizado listar as ocorrencias do usuario logado
 ## OccurrenceUser - Create Occurrence
 
 ```
-POST {{apiUrl}}/api/accounts/occurrence/
+POST https://api.helpec.com.br/api/accounts/occurrence/
 ```
 
 EndPont utilizado para criar uma nova ocorrencia para o usuario logado

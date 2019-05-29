@@ -11,12 +11,12 @@ $ docker-compose build
 
 ## Run Docker
 
-### by docker-compose
-```sh
-$ docker-compose up
-```
+* ### by docker-compose
+    ```sh
+    $ docker-compose up
+    ```
 
-### by docker run
-```sh
-$ docker run -ti -p 80:80 -p 8000:8000 docker_img_web:latest /sbin/my_init -- bash -l
-```
+* ### by docker run
+    ```sh
+    $ docker run -ti -p 80:80 -p 8000:8000 docker_img_web:latest /sbin/my_init -- bash -l
+    ```

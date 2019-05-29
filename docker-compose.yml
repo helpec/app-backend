@@ -1,9 +1,32 @@
 version: '3'
+
 services:
-  web:
-    build: .
-    command: "/sbin/my_init -- bash -l"
+  mysql_db:
+    image: mysql:8
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+  
+  nginx:
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./docker/nginx.conf:/etc/nginx/conf.d/nginx.conf:ro
+      - ./staticfiles:/app/static/:ro
+    restart: always
+    command: [nginx-debug, '-g', 'daemon off;']
+
+  webapp:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
     ports:
       - "8000:8000"
-      - "80:80"
     tty: true
+    restart: always
+    depends_on:
+      - mysql_db
+      - nginx
+    volumes:
+      - ./staticfiles:/app/static/
