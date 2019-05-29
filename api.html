@@ -58,18 +58,43 @@
     <a class="" href="setup.html">Install</a>
 	    </li>
           
+            <li class="toctree-l1">
+		
+    <a class="" href="docker.html">Docker</a>
+	    </li>
+          
             <li class="toctree-l1 current">
 		
     <a class="current" href="api.html">API</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#api-para-reservar-sala-de-reuniao">API para reservar sala de reunião</a></li>
+    <li class="toctree-l2"><a href="#api-helpec-manual">API Helpec - Manual</a></li>
     
         <ul>
         
-            <li><a class="toctree-l3" href="#end-points-para-gestao-das-salas">End Points Para Gestão das Salas</a></li>
+            <li><a class="toctree-l3" href="#autenticationuser-login">AutenticationUser - Login</a></li>
         
-            <li><a class="toctree-l3" href="#end-points-para-gestao-de-reservas">End Points Para Gestão de Reservas</a></li>
+            <li><a class="toctree-l3" href="#autenticationuser-registrationuser">AutenticationUser - RegistrationUser</a></li>
+        
+            <li><a class="toctree-l3" href="#autenticationuser-registrationuser-verifyemail">AutenticationUser - RegistrationUser - VerifyEmail</a></li>
+        
+            <li><a class="toctree-l3" href="#autenticationuser-resetpassword">AutenticationUser - ResetPassword</a></li>
+        
+            <li><a class="toctree-l3" href="#autenticationuser-resetpassword-confirm">AutenticationUser - ResetPassword - Confirm</a></li>
+        
+            <li><a class="toctree-l3" href="#autenticationuser-userdetais">AutenticationUser - UserDetais</a></li>
+        
+            <li><a class="toctree-l3" href="#autenticationuser-userdetais-update">AutenticationUser - UserDetais - Update</a></li>
+        
+            <li><a class="toctree-l3" href="#autenticationuser-userdetais-override">AutenticationUser - UserDetais - Override</a></li>
+        
+            <li><a class="toctree-l3" href="#contactuser-list-constacts">ContactUser - List Constacts</a></li>
+        
+            <li><a class="toctree-l3" href="#contactuser-create-contact">ContactUser - Create Contact</a></li>
+        
+            <li><a class="toctree-l3" href="#occurrenceuser-list-occurrence">OccurrenceUser - List Occurrence</a></li>
+        
+            <li><a class="toctree-l3" href="#occurrenceuser-create-occurrence">OccurrenceUser - Create Occurrence</a></li>
         
         </ul>
     
@@ -127,38 +152,776 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="api-para-reservar-sala-de-reuniao">API para reservar sala de reunião</h1>
-<h2 id="end-points-para-gestao-das-salas">End Points Para Gestão das Salas</h2>
-<ul>
-<li><code>GET    /api/meeting-room/</code> - Lista as salas criadas no sistema</li>
-<li><code>GET    /api/meeting-room/?search=termo</code> - Listar as salas criadas, filtrando pelo "termo"</li>
-<li><code>POST   /api/meeting-room/</code> - Registrar uma nova sala de reunião</li>
-<li><code>PATCH  /api/meeting-room/:id/</code> - Editar uma sala de reunião existente</li>
-<li><code>DELETE /api/meeting-room/:id/</code> - Remover uma sala de reunião existente</li>
-</ul>
-<h3 id="exemplos-de-requisicao-de-criacao-de-sala">Exemplos de requisição de criação de sala</h3>
-<pre><code class="json">{
-&quot;name&quot;: &quot;Sala Principal&quot;,
-&quot;place&quot;: &quot;5 andar&quot;,
-&quot;description&quot;: &quot;Curabitur pellentesque faucibus arcu a varius.&quot;
-}
+                <h1 id="api-helpec-manual">API Helpec - Manual</h1>
+<hr />
+<h2 id="autenticationuser-login">AutenticationUser - Login</h2>
+<pre><code>POST {{apiUrl}}/api/rest-auth/login/
 </code></pre>
 
-<h2 id="end-points-para-gestao-de-reservas">End Points Para Gestão de Reservas</h2>
-<ul>
-<li><code>GET    /api/meeting/</code> - Lista as reservas criadas no sistema</li>
-<li><code>GET    /api/meeting/?search=termo</code> - Listar as reservas criadas, filtrando pelo "termo"</li>
-<li><code>POST   /api/meeting/</code> - Registrar uma nova reserva</li>
-<li><code>PATCH  /api/meeting/:id/</code> - Editar uma reserva existente</li>
-<li><code>DELETE /api/meeting/:id/</code> - Remover uma reserva existente</li>
-</ul>
-<h3 id="exemplos-de-requisicao-para-criacao-de-uma-reserva-de-sala">Exemplos de requisição para criação de uma reserva de sala</h3>
-<pre><code class="json">{
-&quot;name&quot;: &quot;Teste&quot;
-&quot;start&quot;: 2018-01-01 09:00:00
-&quot;end&quot;: 2018-01-01 10:00:00
-&quot;meeting_room&quot;: &lt;id-meeting-room&gt;
-}
+<p>EndPoint necessario para login do usuario na aplicação</p>
+<hr />
+<h3 id="request">Request</h3>
+<blockquote>
+<p><strong>Header</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td>admin@admin.com</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td>password</td>
+<td>admin</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="examples">Examples:</h3>
+<pre><code class="bash">  curl --location --request POST &quot;https://api.helpec.com.br/api/rest-auth/login/&quot; \
+  --header &quot;Content-Type:  application/json&quot; \
+  --form &quot;username=admin@admin.com&quot; \
+  --form &quot;password=admin&quot;
+</code></pre>
+
+<hr />
+<h2 id="autenticationuser-registrationuser">AutenticationUser - RegistrationUser</h2>
+<pre><code>POST {{apiUrl}}/api/rest-auth/registration/
+</code></pre>
+
+<p>EndPoind utilizado para fazer o registro num novo usuario no sistema</p>
+<hr />
+<h3 id="request_1">Request</h3>
+<blockquote>
+<p><strong>Header</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content-Type</td>
+<td>application/javascript</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td>Jose</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td>email</td>
+<td>jose@test.com</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td>password1</td>
+<td>1234A5678</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td>password2</td>
+<td>1234A5678</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="examples_1">Examples:</h3>
+<pre><code class="bash">&gt; curl --location --request POST &quot;https://api.helpec.com.br/api/rest-auth/registration/&quot; \
+  --header &quot;Content-Type: application/javascript&quot; \
+  --form &quot;username=Jose&quot; \
+  --form &quot;email=jose@test.com&quot; \
+  --form &quot;password1=1234A5678&quot; \
+  --form &quot;password2=1234A5678&quot;
+</code></pre>
+
+<hr />
+<h2 id="autenticationuser-registrationuser-verifyemail">AutenticationUser - RegistrationUser - VerifyEmail</h2>
+<pre><code>POST {{apiUrl}}/api/rest-auth/registration/verify-email/
+</code></pre>
+
+<p>EndPoint utilizado para fazer o processo de verificação de email do usuario registrado no sistema, essa etapa é utilizada logo apos a etapa de registro do usuario</p>
+<hr />
+<h3 id="request_2">Request</h3>
+<blockquote>
+<p><strong>Header</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content-Type</td>
+<td>application/javascript</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>{{token}}</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="examples_2">Examples:</h3>
+<pre><code class="bash">  curl --location --request POST &quot;https://api.helpec.com.br/api/rest-auth/registration/verify-email/&quot; \
+  --header &quot;Content-Type: application/javascript&quot; \
+  --form &quot;key=XXXXXX&quot;
+</code></pre>
+
+<hr />
+<h2 id="autenticationuser-resetpassword">AutenticationUser - ResetPassword</h2>
+<pre><code>POST {{apiUrl}}/api/rest-auth/password/reset/
+</code></pre>
+
+<p>EndPont utilizado para o inicio do processo de recuperação de senha do usuario, esse processo envia um email com um token para usuario</p>
+<hr />
+<h3 id="request_3">Request</h3>
+<blockquote>
+<p><strong>Header</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content-Type</td>
+<td>application/javascript</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>email</td>
+<td>admin@admin.com</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="examples_3">Examples:</h3>
+<pre><code class="bash"> curl --location --request POST &quot;https://api.helpec.com.br/api/rest-auth/password/reset/&quot; \
+  --header &quot;Content-Type: application/javascript&quot; \
+  --form &quot;email=admin@admin.com&quot;
+
+</code></pre>
+
+<hr />
+<h2 id="autenticationuser-resetpassword-confirm">AutenticationUser - ResetPassword - Confirm</h2>
+<pre><code>POST {{apiUrl}}/api/rest-auth/password/reset/confirm/
+</code></pre>
+
+<p>EndPont para recuperar a senha do usuario, esse endpont utiliza o token enviado ao usuario para no porcesso de <code>resetPassword</code></p>
+<hr />
+<h3 id="request_4">Request</h3>
+<blockquote>
+<p><strong>Header</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content-Type</td>
+<td>application/javascript</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uid</td>
+<td>1234</td>
+<td>text</td>
+<td>uid are sent in email after calling /rest-auth/password/reset/</td>
+</tr>
+<tr>
+<td>token</td>
+<td>5678</td>
+<td>text</td>
+<td>token are sent in email after calling /rest-auth/password/reset/</td>
+</tr>
+<tr>
+<td>new_password1</td>
+<td>admin</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td>new_password2</td>
+<td>admin</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="examples_4">Examples:</h3>
+<pre><code class="bash"> curl --location --request POST &quot;https://api.helpec.com.br/api/rest-auth/password/reset/confirm/&quot; \
+  --header &quot;Content-Type: application/javascript&quot; \
+  --form &quot;uid=1234&quot; \
+  --form &quot;token=5678&quot; \
+  --form &quot;new_password1=admin&quot; \
+  --form &quot;new_password2=admin&quot;
+</code></pre>
+
+<hr />
+<h2 id="autenticationuser-userdetais">AutenticationUser - UserDetais</h2>
+<pre><code>GET {{apiUrl}}/api/rest-auth/user/
+</code></pre>
+
+<p>EndPont que recupera os dados do do usuario logado no sistema</p>
+<hr />
+<h3 id="request_5">Request</h3>
+<blockquote>
+<p><strong>Header</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>Token {{token}}</td>
+<td></td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="examples_5">Examples:</h3>
+<pre><code class="bash">  curl --location --request GET &quot;https://api.helpec.com.br/api/rest-auth/user/&quot; \
+  --header &quot;Authorization: Token XXXXXX&quot; \
+  --header &quot;Content-Type: application/json&quot; \
+  --data &quot;&quot;
+</code></pre>
+
+<hr />
+<h2 id="autenticationuser-userdetais-update">AutenticationUser - UserDetais - Update</h2>
+<pre><code>PATCH {{apiUrl}}/api/rest-auth/user/
+</code></pre>
+
+<p>EndPont utilizado para atualizar os dados do usuario logado</p>
+<hr />
+<h3 id="request_6">Request</h3>
+<blockquote>
+<p><strong>Header</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>Token {{token}}</td>
+<td></td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>first_name</td>
+<td>Administrador</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>Super User</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="examples_6">Examples:</h3>
+<pre><code class="bash">  curl --location --request PATCH &quot;https://api.helpec.com.br/api/rest-auth/user/&quot; \
+  --header &quot;Authorization: Token XXXXXX&quot; \
+  --header &quot;Content-Type: application/json&quot; \
+  --form &quot;first_name=Administrador&quot; \
+  --form &quot;last_name=Super User&quot;
+</code></pre>
+
+<hr />
+<h2 id="autenticationuser-userdetais-override">AutenticationUser - UserDetais - Override</h2>
+<pre><code>PUT {{apiUrl}}/api/rest-auth/user/
+</code></pre>
+
+<p>Sobrescreve o usuario logado os dados enviados ou com seu valor padrão</p>
+<hr />
+<h3 id="request_7">Request</h3>
+<blockquote>
+<p><strong>Header</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>Token {{token}}</td>
+<td></td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>first_name</td>
+<td>User2</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>novo</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td>username</td>
+<td>newuser</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td>password</td>
+<td>1234a5678</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="examples_7">Examples:</h3>
+<pre><code class="bash"> curl --location --request PUT &quot;https://api.helpec.com.br/api/rest-auth/user/&quot; \
+  --header &quot;Authorization: Token XXXXXX&quot; \
+  --header &quot;Content-Type: application/json&quot; \
+  --form &quot;first_name=User2&quot; \
+  --form &quot;last_name=novo&quot; \
+  --form &quot;username=newuser&quot; \
+  --form &quot;password=1234a5678&quot;
+</code></pre>
+
+<hr />
+<h2 id="contactuser-list-constacts">ContactUser - List Constacts</h2>
+<pre><code>GET {{apiUrl}}/api/accounts/contact
+</code></pre>
+
+<p>EndPont utilizado listar os contatos do usuario logado</p>
+<hr />
+<h3 id="request_8">Request</h3>
+<blockquote>
+<p><strong>Header</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>Token {{token}}</td>
+<td></td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>application/x-www-form-urlencoded</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="examples_8">Examples:</h3>
+<pre><code class="bash"> curl --location --request GET &quot;https://api.helpec.com.br/api/accounts/contact&quot; \
+  --header &quot;Authorization: Token XXXXXX&quot; \
+  --header &quot;Content-Type: application/x-www-form-urlencoded&quot; \
+  --data &quot;&quot;
+</code></pre>
+
+<hr />
+<h2 id="contactuser-create-contact">ContactUser - Create Contact</h2>
+<pre><code>POST {{apiUrl}}/api/accounts/contact/
+</code></pre>
+
+<p>EndPont utilizado criar um novo contatos para o usuario logado</p>
+<hr />
+<h3 id="request_9">Request</h3>
+<blockquote>
+<p><strong>Header</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>Token {{token}}</td>
+<td></td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>Maria</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td>phone</td>
+<td>11912345678</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="examples_9">Examples:</h3>
+<pre><code class="bash"> curl --location --request POST &quot;https://api.helpec.com.br/api/accounts/contact/&quot; \
+  --header &quot;Authorization: Token XXXXXX&quot; \
+  --header &quot;Content-Type: application/json&quot; \
+  --form &quot;name=Maria&quot; \
+  --form &quot;phone=11912345678&quot;
+</code></pre>
+
+<hr />
+<h2 id="occurrenceuser-list-occurrence">OccurrenceUser - List Occurrence</h2>
+<pre><code>GET {{apiUrl}}/api/accounts/occurrence
+</code></pre>
+
+<p>EndPont utilizado listar as ocorrencias do usuario logado</p>
+<hr />
+<h3 id="request_10">Request</h3>
+<blockquote>
+<p><strong>Header</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>Token {{token}}</td>
+<td></td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="examples_10">Examples:</h3>
+<pre><code class="bash"> curl --location --request POST &quot;https://api.helpec.com.br/api/accounts/occurrence/&quot; \
+  --header &quot;Authorization: Token XXXXXX&quot; \
+  --header &quot;Content-Type: application/json&quot; \
+  --form &quot;date_creation=2019-04-15 12:00:00&quot; \
+  --form &quot;location=123456789&quot;
+</code></pre>
+
+<hr />
+<h2 id="occurrenceuser-create-occurrence">OccurrenceUser - Create Occurrence</h2>
+<pre><code>POST {{apiUrl}}/api/accounts/occurrence/
+</code></pre>
+
+<p>EndPont utilizado para criar uma nova ocorrencia para o usuario logado</p>
+<hr />
+<h3 id="request_11">Request</h3>
+<blockquote>
+<p><strong>Header</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>Token {{token}}</td>
+<td></td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Body</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>date_creation</td>
+<td>2019-04-15 12:00:00</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td>location</td>
+<td>123456789</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="examples_11">Examples:</h3>
+<pre><code class="bash"> curl --location --request POST &quot;https://api.helpec.com.br/api/accounts/occurrence/&quot; \
+  --header &quot;Authorization: Token XXXXXX&quot; \
+  --header &quot;Content-Type: application/json&quot; \
+  --form &quot;date_creation=2019-04-15 12:00:00&quot; \
+  --form &quot;location=123456789&quot;
 </code></pre>
               
             </div>
@@ -170,7 +933,7 @@
         <a href="tests.html" class="btn btn-neutral float-right" title="Tests">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="setup.html" class="btn btn-neutral" title="Install"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="docker.html" class="btn btn-neutral" title="Docker"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -198,7 +961,7 @@
           <a href="https://github.com/helpec/app-backend/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="setup.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="docker.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="tests.html" style="color: #fcfcfc">Next &raquo;</a></span>

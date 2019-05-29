@@ -60,6 +60,11 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="docker.html">Docker</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="api.html">API</a>
 	    </li>
           
@@ -82,6 +87,8 @@
             <li><a class="toctree-l3" href="#executar-build-da-documentacao">Executar build da documentação</a></li>
         
             <li><a class="toctree-l3" href="#deploy-documentacao">Deploy documentação</a></li>
+        
+            <li><a class="toctree-l3" href="#build-documentacao-api">Build documentação API</a></li>
         
         </ul>
     
@@ -154,6 +161,26 @@ $ git remote add github_io git@github.com:helpec/helpec.github.io.git
 <pre><code class="bash">$ cd /path/to/env/app_backend/app
 $ ../bin/mkdocs gh-deploy
 </code></pre>
+
+<h2 id="build-documentacao-api">Build documentação API</h2>
+<ul>
+<li>
+<p>Exportar JSON do Postman</p>
+<p>Exporte sua coleção do Postman (somente suporte para Collection v2 por enquanto).
+Você poderia obter um arquivo JSON.</p>
+<p>Primeiro Passo: Selecione a coleção que você deseja exportar.
+<img alt="Primeiro Passo: Selecione a coleção que você deseja exportar." src="https://raw.githubusercontent.com/TitorX/Postdown/master/imgs/step-1.png" />
+Segundo Passo: Encontre o botão de importação e clique nele.
+<img alt="Segundo Passo: Encontre o botão de importação e clique nele." src="https://raw.githubusercontent.com/TitorX/Postdown/master/imgs/step-2.png" />
+Terceiro Passo: Exporte sua coleção como <em>coleção v2</em>.
+<img alt="Terceiro Passo: Exporte sua coleção como *coleção v2*." src="https://raw.githubusercontent.com/TitorX/Postdown/master/imgs/step-3.png" /></p>
+</li>
+<li>
+<p>Rode <code>postdown</code> para gerar <code>markdown</code>da documentação
+    <code>bash
+    $ postdown xxx.json xxx.md</code></p>
+</li>
+</ul>
               
             </div>
           </div>

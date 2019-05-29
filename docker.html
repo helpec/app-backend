@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Tests - Helpec API - API Helpec - Help Epilepsia e Convulsão</title>
+  <title>Docker - Helpec API - API Helpec - Help Epilepsia e Convulsão</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Tests";
-    var mkdocs_page_input_path = "tests.md";
-    var mkdocs_page_url = "/tests.html";
+    var mkdocs_page_name = "Docker";
+    var mkdocs_page_input_path = "docker.md";
+    var mkdocs_page_url = "/docker.html";
   </script>
   
   <script src="js/jquery-2.1.1.min.js" defer></script>
@@ -58,9 +58,26 @@
     <a class="" href="setup.html">Install</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="docker.html">Docker</a>
+    <a class="current" href="docker.html">Docker</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#instalar-em-ambiente-docker">Instalar em Ambiente Docker</a></li>
+    
+
+    <li class="toctree-l2"><a href="#template-em-docker-compose">Template em docker-compose</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#build-image">Build image</a></li>
+        
+            <li><a class="toctree-l3" href="#run-docker">Run Docker</a></li>
+        
+        </ul>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -68,31 +85,9 @@
     <a class="" href="api.html">API</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="tests.html">Tests</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#teste-da-aplicacao">Teste da aplicação</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l3" href="#instalar-dependencias-para-os-testes">Instalar dependencias para os testes</a></li>
-        
-            <li><a class="toctree-l3" href="#executar-unittest">Executar unittest</a></li>
-        
-            <li><a class="toctree-l3" href="#analisar-o-codigo-pelo-pylint">Analisar o código pelo pylint</a></li>
-        
-            <li><a class="toctree-l3" href="#analisar-o-codigo-pelo-pep8">Analisar o código pelo pep8</a></li>
-        
-            <li><a class="toctree-l3" href="#executar-o-coverage-report">Executar o Coverage report</a></li>
-        
-            <li><a class="toctree-l3" href="#analise-pelo-coverage">Analise pelo Coverage</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="tests.html">Tests</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -127,10 +122,10 @@
     
       
     
-    <li>Tests</li>
+    <li>Docker</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/helpec/app-backend/edit/master/docs/tests.md"
+        <a href="https://github.com/helpec/app-backend/edit/master/docs/docker.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -140,66 +135,21 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="teste-da-aplicacao">Teste da aplicação</h1>
-<h2 id="instalar-dependencias-para-os-testes">Instalar dependencias para os testes</h2>
-<pre><code class="bash">$ cd /path/to/env/app_backend/app
-$ ../bin/pip install pylint flake8 coverage black
+                <h1 id="instalar-em-ambiente-docker">Instalar em Ambiente Docker</h1>
+<h1 id="template-em-docker-compose">Template em docker-compose</h1>
+<p>Cria uma imagem padrão para desenvolvimento e hospedagem de aplicação em Python</p>
+<h2 id="build-image">Build image</h2>
+<pre><code class="sh">$ docker-compose build
 </code></pre>
 
-<h2 id="executar-unittest">Executar unittest</h2>
-<pre><code class="bash">$ cd /path/to/env/app_backend/app
-$ python manage.py test -v 2
+<h2 id="run-docker">Run Docker</h2>
+<h3 id="by-docker-compose">by docker-compose</h3>
+<pre><code class="sh">$ docker-compose up
 </code></pre>
 
-<h2 id="analisar-o-codigo-pelo-pylint">Analisar o código pelo pylint</h2>
-<pre><code class="bash">$ cd /path/to/env/app_backend/app
-$ ../bin/pylint app_backend/*
+<h3 id="by-docker-run">by docker run</h3>
+<pre><code class="sh">$ docker run -ti -p 80:80 -p 8000:8000 docker_img_web:latest /sbin/my_init -- bash -l
 </code></pre>
-
-<h2 id="analisar-o-codigo-pelo-pep8">Analisar o código pelo pep8</h2>
-<pre><code class="bash">$ cd /path/to/env/app_backend/app
-$ ../bin/flake8 app_backend/*
-</code></pre>
-
-<ul>
-<li>Formatar o codigo pelo padrão do pep8 (black)</li>
-</ul>
-<p><code>$ ./bin/black ../bin/black --exclude='/migrations/' app_backend/</code></p>
-<h2 id="executar-o-coverage-report">Executar o Coverage report</h2>
-<p>Após executar todos os testes unitários execute o comando abaixo</p>
-<pre><code class="bash">$ cd /path/to/env/app_backend/app
-$ ../bin/coverage html
-</code></pre>
-
-<p>O comando gerará uma pasta chamada <code>htmlcov</code> e ao abri-lá irá localizar e abrir o arquivo <code>index.html</code> com seu navegador para ver o relatório</p>
-<h2 id="analise-pelo-coverage">Analise pelo Coverage</h2>
-<table>
-<thead>
-<tr>
-<th>Module</th>
-<th>statements</th>
-<th>missing</th>
-<th>excluded</th>
-<th>coverage</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Total</td>
-<td>188</td>
-<td>63</td>
-<td>0</td>
-<td>66%</td>
-</tr>
-<tr>
-<td>Total</td>
-<td>188</td>
-<td>63</td>
-<td>0</td>
-<td>66%</td>
-</tr>
-</tbody>
-</table>
               
             </div>
           </div>
@@ -207,10 +157,10 @@ $ ../bin/coverage html
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="docs.html" class="btn btn-neutral float-right" title="Docs">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="api.html" class="btn btn-neutral float-right" title="API">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="api.html" class="btn btn-neutral" title="API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="setup.html" class="btn btn-neutral" title="Install"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -238,10 +188,10 @@ $ ../bin/coverage html
           <a href="https://github.com/helpec/app-backend/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="api.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="setup.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="docs.html" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="api.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
