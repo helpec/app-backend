@@ -7,6 +7,7 @@ theme: readthedocs
 nav:
 - Home: 'index.md'
 - Install: 'setup.md'
+- Docker: 'docker.md'
 - API: 'api.md' 
 - Tests: 'tests.md'
 - Docs: 'docs.md'

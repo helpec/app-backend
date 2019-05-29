@@ -50,3 +50,24 @@ $ ../bin/python ./manage.py runserver
 ## Acessar no seu navegador a URL
 
 [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+
+## API para desenvolvimento
+
+### Postman
+
+Coleção destinada a utilização manual e desenvolvimento da API 
+
+* (Documentação Online)[https://documenter.getpostman.com/view/1391125/S1EQSxoL]
+* (Colection para importação)[https://www.getpostman.com/collections/2bfa6338edcaeed4f607]
+
+
+### Environment Variables
+
+Crie um `environment` no postman com os parametros abaixo:
+
+|--|--|
+|Key|Value|
+|--|--|
+|token|XXXXXX|
+|apiUrl|https://api.helpec.com.br|
