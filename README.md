@@ -15,5 +15,5 @@ Backend to Helpec Site in Django and RESTful API
 * [Documentação da aplicação](https://helpec.github.io/app-backend/)
 * [DockerHub](https://hub.docker.com/r/helpec/app-backend)
 * [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/2bfa6338edcaeed4f607#?env%5BAPI%20HELPEC%5D=W3sia2V5IjoidG9rZW4iLCJ2YWx1ZSI6IlhYWFhYWCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYXBpVXJsIiwidmFsdWUiOiJodHRwczovL2FwaS5oZWxwZWMuY29tLmJyIiwiZW5hYmxlZCI6dHJ1ZX1d)
-*
+
 
