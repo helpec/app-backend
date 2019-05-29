@@ -58,16 +58,15 @@ $ ../bin/python ./manage.py runserver
 
 Coleção destinada a utilização manual e desenvolvimento da API 
 
-* (Documentação Online)[https://documenter.getpostman.com/view/1391125/S1EQSxoL]
-* (Colection para importação)[https://www.getpostman.com/collections/2bfa6338edcaeed4f607]
+* [Documentação Online](https://documenter.getpostman.com/view/1391125/S1EQSxoL0)
+* [Colection para importação](https://www.getpostman.com/collections/2bfa6338edcaeed4f607)
 
 
 ### Environment Variables
 
 Crie um `environment` no postman com os parametros abaixo:
 
-|--|--|
 |Key|Value|
-|--|--|
+|---|---|
 |token|XXXXXX|
 |apiUrl|https://api.helpec.com.br|

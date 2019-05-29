@@ -30,7 +30,10 @@ $ ../bin/flake8 app_backend/*
 
 * Formatar o codigo pelo padrão do pep8 (black)
 
-`$ ./bin/black ../bin/black --exclude='/migrations/' app_backend/`
+```bash
+$ cd /path/to/env/app_backend/app
+$ ../bin/black --exclude='/migrations/' app_backend/
+```
 
 ## Executar o Coverage report
 
