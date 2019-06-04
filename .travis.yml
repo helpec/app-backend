@@ -6,8 +6,7 @@ matrix:
       sudo: true
 before_install:
     - pip install --upgrade setuptools pip
-    - pip install -r requirements.txt
-    - pip install coveralls coverage
+    - pip install -r requirements/test.txt
 script:
   - coverage run --source='.' manage.py test -v2
 after_success:

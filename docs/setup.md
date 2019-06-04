@@ -58,7 +58,7 @@ $ ../bin/python ./manage.py runserver
 
 Coleção destinada a utilização manual e desenvolvimento da API 
 
-* [Documentação Online](https://documenter.getpostman.com/view/1391125/S1EQSxoL0)
+* [Documentação Online](https://documenter.getpostman.com/view/1391125/S1EQSxoL)
 * [Colection para importação](https://www.getpostman.com/collections/2bfa6338edcaeed4f607)
 
 

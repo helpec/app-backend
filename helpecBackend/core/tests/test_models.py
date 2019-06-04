@@ -18,10 +18,34 @@ class HP_UserTest(TestCase):
             email="test@silva.com",
             phone="11 4455223366")
         user = HP_User.objects.all()[0]
+
         self.assertEqual(
             user.first_name, "Test Silva"
         )
+    
+        self.assertEqual(
+            str(user), "test@silva.com"
+        )
 
+    def test_edit(self):
+        HP_User.objects.create(
+            username="testsilva2",
+            first_name="Test Silva2",
+            last_name="Silva",
+            email="test2@silva.com",
+            phone="11 4455223366")
+        user = HP_User.objects.all()[0]
+        self.assertEqual(
+            user.first_name, "Test Silva2"
+        )
+        user.first_name = "Alterado"
+        user.save()
+        
+        user = HP_User.objects.all()[0]
+        self.assertEqual(
+            user.first_name, "Alterado"
+        )
+        
 
 class ContactTest(TestCase):
     """ Test module for Contact model """
@@ -46,6 +70,9 @@ class ContactTest(TestCase):
         self.assertEqual(
             contact.name, "Mae User"
         )
+
+        self.assertIn("user@silva.com - Mae User", str(contact))
+    
     
 class OccurrenceTest(TestCase):
     """ Test module for Occurrence model """
@@ -69,4 +96,6 @@ class OccurrenceTest(TestCase):
         self.assertEqual(
             occurrence.location, "Sao Paulo"
         )
+    
+        self.assertIn("user@silva.com - ", str(occurrence))
     

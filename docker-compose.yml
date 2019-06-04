@@ -17,6 +17,11 @@ services:
     restart: always
     command: [nginx-debug, '-g', 'daemon off;']
 
+  mailhog:
+      image: mailhog/mailhog:latest
+      ports:
+          - "8025:8025"
+
   webapp:
     build:
       context: .
@@ -28,5 +33,6 @@ services:
     depends_on:
       - mysql_db
       - nginx
+      - mailhog
     volumes:
       - ./staticfiles:/app/static/

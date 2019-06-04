@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "@luq$r%tfc@kr&8#tre1i=@j$fb((7n0a#^&a-!999&0pp0q1d"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*", "api.helpec.com.br"]
+ALLOWED_HOSTS = ["api.helpec.com.br"]
 
 ADMINS = [("Suporte TEC", "suporte@helpec.com.br")]
 
@@ -155,8 +155,3 @@ REST_FRAMEWORK = {
 }
 
 DEFAULT_FROM_EMAIL = "no-reply@helpec.com.br"
-EMAIL_HOST = "email-smtp.us-east-1.amazonaws.com"
-EMAIL_PORT = 587
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
-EMAIL_USE_TLS = True
