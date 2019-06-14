@@ -17,11 +17,11 @@ DATABASES = {
 }
 
 
-
-# sentry_sdk.init(
-#     dsn=os.getenv("SENTRY_DJANGO_DSN"),
-#     integrations=[DjangoIntegration()]
-# )
+if os.getenv("SENTRY_ENABLE"):
+    sentry_sdk.init(
+        dsn=os.getenv("SENTRY_DJANGO_DSN"),
+        integrations=[DjangoIntegration()]
+    )
 
 
 EMAIL_HOST = "email-smtp.us-east-1.amazonaws.com"

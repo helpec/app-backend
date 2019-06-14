@@ -10,7 +10,7 @@ services:
   nginx:
     image: nginx
     ports:
-      - "80:80"
+      - "8080:80"
     volumes:
       - ./docker/nginx.conf:/etc/nginx/conf.d/nginx.conf:ro
       - ./staticfiles:/app/static/:ro
@@ -36,3 +36,15 @@ services:
       - mailhog
     volumes:
       - ./staticfiles:/app/static/
+    environment:
+      - DJANGO_SETTINGS_MODULE=helpecBackend.settings.production
+      - DATABASE_NAME=helpec
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=root
+      - DATABASE_HOST=mysql_db
+      - DATABASE_PORT=3306
+      # - SENTRY_ENABLE=1
+      - SENTRY_DJANGO_DSN=""
+      - EMAIL_HOST_USER=""
+      - EMAIL_HOST_PASSWORD=""
+      - ALLOWED_HOSTS=""

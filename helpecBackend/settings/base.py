@@ -26,6 +26,7 @@ SECRET_KEY = "@luq$r%tfc@kr&8#tre1i=@j$fb((7n0a#^&a-!999&0pp0q1d"
 DEBUG = False
 
 ALLOWED_HOSTS = ["api.helpec.com.br"]
+ALLOWED_HOSTS += os.getenv("ALLOWED_HOSTS", ",").split(",")
 
 ADMINS = [("Suporte TEC", "suporte@helpec.com.br")]
 
