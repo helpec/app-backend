@@ -1,5 +1,5 @@
 -r base.txt
-coveralls==1.8.0
+coveralls==3.3.0
 coverage
 pycodestyle==2.5.0
 pyflakes==2.1.1
