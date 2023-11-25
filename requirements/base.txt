@@ -9,7 +9,7 @@ django-cors-headers==3.0.1
 django-rest-auth==0.9.5
 django-rest-swagger==2.2.0
 djangorestframework==3.9.4
-idna==2.8
+idna==3.6
 itypes==1.1.0
 Jinja2==2.10.1
 MarkupSafe==1.1.1
